@@ -1,0 +1,33 @@
+{
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.27",
+    "tailwindcss": "^3.3.3"
+  },
+  "name": "akashi",
+  "description": "[![Generic badge](https://img.shields.io/badge/course%20available%3F-yes-green.svg)](https://shields.io/)",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "browserslist": "^4.21.9",
+    "caniuse-lite": "^1.0.30001517",
+    "electron-to-chromium": "^1.4.468",
+    "escalade": "^3.1.1",
+    "fraction.js": "^4.2.0",
+    "nanoid": "^3.3.6",
+    "node-releases": "^2.0.13",
+    "normalize-range": "^0.1.2",
+    "picocolors": "^1.0.0",
+    "postcss-value-parser": "^4.2.0",
+    "shopify": "^0.1.0",
+    "source-map-js": "^1.0.2",
+    "update-browserslist-db": "^1.0.11"
+  },
+  "scripts": {
+    "tw": "npx tailwindcss -i ./style.css -o ./theme/assets/application.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

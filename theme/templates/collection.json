@@ -1,0 +1,9 @@
+{
+  "name": "Template collection",
+  "sections": {
+    "template": {
+      "type":"template-collection"
+    }
+  },
+  "order": ["template"]
+}

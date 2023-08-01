@@ -1,0 +1,43 @@
+<div class="w-full max-w-6xl mx-auto">
+  <h1 class="my-3 text-3xl font-bold text-center uppercase">Search results</h1>
+  {%- paginate search.results by 9 -%}
+    <div class="flex flex-col justify-center w-full align-center">
+      <form
+        action="{{ routes.search_url }}"
+        method="get"
+        role="search"
+        class="flex justify-between w-1/2 mx-auto my-2 border align-center"
+      >
+        <input type="search" name="q" value="{{ search.terms | escape }} " class="flex-1 p-2 outline-none">
+        <button type="submit" class="px-4 py-2 text-white bg-green-500 border-l-0">search</button>
+      </form>
+      {%- if search.performed -%}
+        {%- if search.results.size > 0 -%}
+          <p class="my-4 text-center">
+            <span class="font-bold">{{ search.results.size }}</span> results for the search term
+            <span class="text-lg font-bold">{{ search.terms | escape }}</span>
+          </p>
+          <div class="max-w-6xl mx-auto ">
+            <div class="grid grid-cols-1 gap-16 md:grid-cols-3">
+              {%- for item in search.results -%}
+                {%- case item.object_type -%}
+                  {%- when 'product' -%}
+                    {%- render 'product-card', product: item -%}
+                  {%- else -%}
+                {%- endcase -%}
+              {%- endfor -%}
+            </div>
+          </div>
+        {%- else -%}
+          <p class="my-4 text-center">
+            No results found for the search terms: <span class="text-lg font-bold">{{ search.terms | escape }}</span>
+            try to use a different keywords
+          </p>
+        {%- endif -%}
+      {%- endif -%}
+      {%- if paginate.pages > 0 -%}
+        {%- render 'pagination', pagination: paginate -%}
+      {%- endif -%}
+    </div>
+  {%- endpaginate -%}
+</div>

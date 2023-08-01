@@ -1,0 +1,15 @@
+<div class="w-full px-4 py-8">
+  <div class="px-2 overflow-hidden bg-white border rounded-lg shadow-lg h-80">
+    <div class="overflow-hidden h-52">
+      {{ 'product-1' | placeholder_svg_tag: 'object-cover max-w-full max-h-full' }}
+    </div>
+    <span class="text-sm text-gray-400">Vendor</span>
+    <a
+      href="{{ product.url }}"
+      class="block h-10 my-2 font-bold text-center uppercase text-md"
+    >
+      Placeholder title
+    </a>
+    <p class="relative mb-2 ml-2 text-gray-400">{{ '9999' | money }}</p>
+  </div>
+</div>

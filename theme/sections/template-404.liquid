@@ -1,0 +1,47 @@
+<div class="inline-block transform translate-y-1/2 top-1/2 ">
+  <h1 class="my-4 text-5xl font-bold truncate">{{ section.settings.title }}</h1>
+  <p class="text-xl ">{{ section.settings.subtext_title }}</p>
+  <div class="my-5">
+    {% if section.settings.back_to_home_url == blank %}
+      {% assign Shop_url = shop.secure_url %}
+    {% else %}
+      {% assign Shop_url = section.settings.back_to_home_url %}
+    {% endif %}
+    <a href="{{ Shop_url }}" class="inline px-4 py-2 font-bold text-white bg-green-700 rounded hover:bg-green-900">
+      {{ section.settings.back_to_home -}}
+    </a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Template 404",
+  "tag": "section",
+  "class": "flex items-center justify-center w-screen h-screen text-center flex-col",
+  "settings": [
+    {
+      "type": "text",
+      "label": "404 Heading Title",
+      "id": "title",
+      "default": "404"
+    },
+    {
+      "type": "text",
+      "label": "404 Subtitle Title",
+      "id": "subtext_title",
+      "default": "The page you were looking for does not exist"
+    },
+    {
+      "type": "text",
+      "label": "Back Button Title",
+      "id": "back_to_home",
+      "default": "Back to Home"
+    },
+    {
+      "type": "url",
+      "label": "Back Button URL",
+      "id": "back_to_home_url"
+    }
+  ]
+}
+{% endschema %}
